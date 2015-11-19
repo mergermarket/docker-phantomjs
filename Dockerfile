@@ -25,3 +25,14 @@ RUN git clone https://github.com/ariya/phantomjs.git /tmp/phantomjs && \
   cd /tmp/phantomjs && git checkout $PHANTOM_JS_TAG && \
   ./build.sh --confirm && mv bin/phantomjs /usr/local/bin && \
   rm -rf /tmp/phantomjs
+
+RUN apt-get update && \
+    apt-get -y install build-essential zlib1g-dev libssl-dev libreadline6-dev libyaml-dev wget && \
+    cd /tmp && \
+    wget https://cache.ruby-lang.org/pub/ruby/2.2/ruby-2.2.3.tar.gz && \
+    tar -xvzf ruby-2.2.3.tar.gz && \
+    cd ruby-2.2.3/ && \
+    ./configure --prefix=/usr/local && \
+    make && \
+    make install
+
