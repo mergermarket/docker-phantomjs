@@ -6,7 +6,7 @@ This version also has Ruby 2.2.3 Installed on it too...
 
 ## Get the image
 
-The image can be found on the MM docker registry (https://registry.mergermarket.it/phantomjs2/).
+The image can be found in the MM docker registry (https://registry.mergermarket.it/phantomjs2/).
 
 ```
 docker pull registry.mergermarket.it/phantomjs2:latest
