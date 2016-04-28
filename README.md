@@ -6,10 +6,16 @@ This version also has Ruby 2.2.3 Installed on it too...
 
 ## Get the image
 
-The image can be found in the MM docker registry (https://registry.mergermarket.it/phantomjs2/).
+The image can be found in the MM docker registry (https://733578946173.dkr.ecr.eu-west-1.amazonaws.com/phantomjs2/).
 
 ```
-docker pull registry.mergermarket.it/phantomjs2:latest
+mkdir -p docker-config
+export DOCKER_CONFIG=$(pwd)/docker-config
+set +x
+eval $(aws ecr get-login)
+set -x
+
+docker pull 733578946173.dkr.ecr.eu-west-1.amazonaws.com/phantomjs2:latest
 ```
 ## Usage
 
@@ -22,7 +28,7 @@ docker run -t ≈ phantomjs --version
 But you'll probably want to use it as a base image:
 
 ```
-FROM registry.mergermarket.it/phantomjs2:latest
+FROM 733578946173.dkr.ecr.eu-west-1.amazonaws.com/phantomjs2:latest
 ```
 
 ## Source
