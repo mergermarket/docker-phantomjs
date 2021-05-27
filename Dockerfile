@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM ubuntu:trusty-20190425
 MAINTAINER ServeBox <foss@servebox.com>
 
 RUN apt-get update -qq && apt-get upgrade -y && apt-get install -y \
